@@ -22,7 +22,9 @@ export default function index() {
                 }
                 </p>
                 <motion.p variants={slideIn} animate={isInView ? "open" : "closed"}>
-                    I help people, companies from all over the world with tailor-made solutions. With each project, I push my work to new horizons, always putting quality first.
+                    I help professionals and brands worldwide craft a powerful digital identity through tailor-made web experiences that blend creativity, strategy, and precision.
+Every project is an opportunity to tell a unique story, designed to inspire trust, highlight value, and elevate visibility.
+With a relentless focus on quality and detail, I push every creation beyond expectations to deliver lasting impact.
                 </motion.p>
                 <div data-scroll data-scroll-speed={0.1}>
                     <Magnetic>

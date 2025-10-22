@@ -2,12 +2,11 @@
 'use client';
 import Image from 'next/image';
 import styles from './style.module.scss';
-import { useRef, useLayoutEffect } from 'react';
+import { useRef, useLayoutEffect, useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { slideUp } from './animation';
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
 
 export default function Home() {
 	const firstText = useRef(null);
@@ -16,21 +15,39 @@ export default function Home() {
 	let xPercent = 0;
 	let direction = -1;
 
-    const [time, setTime] = useState("");
+	const [time, setTime] = useState('');
 
 	useEffect(() => {
-		const updateTime = () => {
-			const indiaTime = new Date().toLocaleTimeString('en-IN', {
-				timeZone: 'Asia/Kolkata',
-				hour12: true,
-				hour: '2-digit',
-				minute: '2-digit',
-				second: '2-digit',
-			});
-			setTime(indiaTime);
+		const pad = (n) => String(n).padStart(2, '0');
+
+		const getTunisiaTimeString = () => {
+			try {
+				const val = new Date().toLocaleTimeString('en-US', {
+					timeZone: 'Africa/Tunis',
+					hour12: true,
+					hour: '2-digit',
+					minute: '2-digit',
+					second: '2-digit',
+				});
+				return val;
+			} catch (err) {
+				console.warn('Intl failed, using fallback:', err);
+				const now = new Date();
+				const utcH = now.getUTCHours();
+				const utcM = now.getUTCMinutes();
+				const utcS = now.getUTCSeconds();
+				const h24 = (utcH + 1) % 24; // Tunisia = UTC+1
+				const ampm = h24 >= 12 ? 'PM' : 'AM';
+				const h12 = h24 % 12 === 0 ? 12 : h24 % 12;
+				return `${pad(h12)}:${pad(utcM)}:${pad(utcS)} ${ampm}`;
+			}
 		};
-		updateTime();
-		const intervalId = setInterval(updateTime, 1000);
+
+		setTime(getTunisiaTimeString()); // initial
+		const intervalId = setInterval(() => {
+			setTime(getTunisiaTimeString());
+		}, 1000);
+
 		return () => clearInterval(intervalId);
 	}, []);
 
@@ -82,8 +99,8 @@ export default function Home() {
 			<div className={styles.sliderContainer}>
 				<div ref={slider} className={styles.slider}>
 					<div>
-						<p ref={firstText}>Youssef Zammit —</p>
-						<p ref={secondText}>Youssef Zammit —</p>
+						<p ref={firstText} style={{ fontSize: "10rem" }}>Youssef Zammit —</p>
+						<p ref={secondText}style={{ fontSize: "10rem" }}>Youssef Zammit —</p>
 					</div>
 				</div>
 			</div>
@@ -100,13 +117,7 @@ export default function Home() {
 					xmlns="http://www.w3.org/2000/svg"
 				>
 					<defs>
-						<linearGradient
-							id="grad1"
-							x1="0%"
-							x2="100%"
-							y1="0%"
-							y2="0%"
-						>
+						<linearGradient id="grad1" x1="0%" x2="100%" y1="0%" y2="0%">
 							<stop offset="0%" stopColor="#ffffffff" />
 							<stop offset="100%" stopColor="#f0f0f0ff" />
 						</linearGradient>
@@ -118,7 +129,7 @@ export default function Home() {
 				</svg>
 				<p>Freelance</p>
 				<p>Engineer & Designer</p>
-                <p>Based in Tunisia {time}</p>
+				<p>Based in Tunisia {time}</p>
 			</div>
 		</motion.main>
 	);

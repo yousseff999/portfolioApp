@@ -8,28 +8,26 @@ I help you define your online identity, ensuring your website reflects your valu
 		description3: `Content Strategy :
 I guide you in presenting your experience, achievements, and projects in a way that inspires trust and attracts opportunities`,
 		src: 'portfolio.png',
-		link: 'https://github.com/rishilahoti/portfolio_new',
 		color: '#ffffffff',
 	},
 	{
-		title: 'One_Music',
-		description: `🎶 Portfolio & Branding:
-A clean, modern website where the artist showcases their music, visuals, and story in one place — turning their brand into a professional digital identity.`,
-		description2: `🎤 Fan Engagement:
-A central hub for fans to discover new tracks, watch videos, follow upcoming events, and connect directly with the artist.`,
-		description3: `💿 Music & Booking:
-A professional site that highlights albums, singles, and performances while making it easy for managers, venues, and collaborators to book the artist.`,
-		src: 'sing.png',
-		link: 'https://github.com/rishilahoti/template-next-15rc',
-		color: '#ffffffff',
-	},
+  title: 'Studio Size Seven',
+  description: `Brand Identity & Experience:
+Developed a full website for Studio Size Seven — a creative design studio focused on visual storytelling and modern aesthetics. The site reflects their bold brand identity through refined layouts and an immersive digital experience.`,
+  description2: `Seamless Interactions & Animation:
+Implemented smooth, high-performance animations and transitions to enhance user engagement and convey the studio’s artistic energy and attention to detail.`,
+  description3: `Professional Branding Showcase:
+Built a platform that positions Studio Size Seven as a premium creative agency — blending design, strategy, and motion to highlight their expertise and attract high-end clients.`,
+  src: 'design.mp4',
+  color: '#ffffffff',
+},
+	
 	{
 		title: 'Frames Creative Studio',
 		description: `Designed and developed a professional website for Frames Creative Studio, showcasing their photography services with a clean and modern layout.`,
 		description2: `Built an online portfolio for Frames Creative Studio, highlighting their diverse photography work and making it easy for clients to explore services.`,
         description3: `Created a responsive website for Frames Creative Studio to enhance their digital presence and attract new clients through a visually engaging platform.`,
 		src: 'photographe.png',
-		link: 'https://github.com/rishilahoti/docs-new-version',
 		color: '#ffffffff',
 	},
 	{
@@ -40,6 +38,17 @@ A professional site that highlights albums, singles, and performances while maki
 		src: 'photo.png',
 		link: '',
 		color: '#fcfcfcff',
+	},
+	{
+		title: 'One_Music',
+		description: `Portfolio & Branding:
+A clean, modern website where the artist showcases their music, visuals, and story in one place — turning their brand into a professional digital identity.`,
+		description2: `Fan Engagement:
+A central hub for fans to discover new tracks, watch videos, follow upcoming events, and connect directly with the artist.`,
+		description3: `Music & Booking:
+A professional site that highlights albums, singles, and performances while making it easy for managers, venues, and collaborators to book the artist.`,
+		src: 'sing.png',
+		color: '#ffffffff',
 	},
 	{
 		title: '',

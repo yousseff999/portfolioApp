@@ -11,27 +11,24 @@ export default function index() {
     <div className={styles.footer}>
       <Magnetic>
         <div className={styles.el}>
-        <a href='https://www.linkedin.com/in/rishi-lahoti-665889166/' target='_blank'>LinkedIn</a>
+        <a href='https://www.linkedin.com/in/youssef-zammit' target='_blank'>LinkedIn</a>
         <div className={styles.indicator}></div>
         </div>
       </Magnetic>
       <Magnetic>
         <div className={styles.el}>
-        <a href='https://github.com/rishilahoti' target='_blank'>GitHub</a>
+        <a href='https://github.com/yousseff999' target='_blank'>GitHub</a>
         <div className={styles.indicator}></div>
         </div>
       </Magnetic>
       <Magnetic>
         <div className={styles.el}>
-        <a href='https://twitter.com/rishii_lahoti' target='_blank'>Twitter</a>
+        <a href='https://www.instagram.com/youssef.zammit' target='_blank'>Instagram</a>
         <div className={styles.indicator}></div>
         </div>
       </Magnetic>
       <Magnetic>
-        <div className={styles.el}>
-        <a href='https://drive.google.com/file/d/18StCZFuKOo7RkzZxnvuk93OuQuct0Svi/view?usp=sharing' target='_blank'>Resume</a>
-        <div className={styles.indicator}></div>
-        </div>
+        <a href="/YOUSSEF-ZAMMIT.pdf" download>Resume</a>
       </Magnetic>
     </div>
     </>
