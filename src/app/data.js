@@ -10,17 +10,7 @@ I guide you in presenting your experience, achievements, and projects in a way t
 		src: 'portfolio.png',
 		color: '#ffffffff',
 	},
-	{
-  title: 'Studio Size Seven',
-  description: `Brand Identity & Experience:
-Developed a full website for Studio Size Seven — a creative design studio focused on visual storytelling and modern aesthetics. The site reflects their bold brand identity through refined layouts and an immersive digital experience.`,
-  description2: `Seamless Interactions & Animation:
-Implemented smooth, high-performance animations and transitions to enhance user engagement and convey the studio’s artistic energy and attention to detail.`,
-  description3: `Professional Branding Showcase:
-Built a platform that positions Studio Size Seven as a premium creative agency — blending design, strategy, and motion to highlight their expertise and attract high-end clients.`,
-  src: 'design.mp4',
-  color: '#ffffffff',
-},
+	
 	
 	{
 		title: 'Frames Creative Studio',
