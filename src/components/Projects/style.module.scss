@@ -1,135 +1,155 @@
 .cardContainer {
-	height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: sticky;
-	top: 0px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
 
-	@media screen and (max-width: 1024px) {
-		margin: auto;
-	}
-	@media screen and (max-width: 768px) {
-		margin: auto;
-	}
+  @media screen and (max-width: 1024px) {
+    margin: auto;
+  }
 
-	.card {
-		display: flex;
-		flex-direction: column;
-		position: relative;
-		top: -25%;
-		height: 500px;
-		width: 1000px;
-		border-radius: 25px;
-		padding: 50px;
-		transform-origin: top;
+  @media screen and (max-width: 768px) {
+    height: auto;
+    position: relative; // disable sticky on mobile
+    margin: auto;
+    padding: 20px 0;
+  }
 
-		h2 {
-			text-align: center;
-			margin: 0px;
-			font-size: 28px;
-		}
+  .card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: -25%;
+    height: 500px;
+    width: 1000px;
+    border-radius: 25px;
+    padding: 50px;
+    transform-origin: top;
 
-		.body {
-			display: flex;
-			height: 100%;
-			margin-top: 50px;
-			gap: 50px;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      top: 0;
+      padding: 20px;
+      height: auto;
+    }
 
-			@media screen and (max-width: 768px) {
-				flex-direction: flex;
-				margin-top: 0px;
-				gap: 0px;
-			}
+    h2 {
+      text-align: center;
+      margin: 0;
+      font-size: 28px;
 
-			.description {
-				width: 40%;
-				position: relative;
-				top: 10%;
+      @media screen and (max-width: 768px) {
+        font-size: 22px;
+      }
+    }
 
-				@media screen and (max-width: 768px) {
-					width: 100%;
-					top: 0%;
-					position: relative;
-				}
+    .body {
+      display: flex;
+      height: 100%;
+      margin-top: 50px;
+      gap: 50px;
 
-				p {
-					font-size: 16px;
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+        margin-top: 20px;
+        gap: 20px;
+      }
 
-					&::first-letter {
-						font-size: 28px;
-						font-family: Lexend;
-					}
+      .description {
+        width: 40%;
+        position: relative;
+        top: 10%;
 
-					@media screen and (max-width: 768px) {
-						font-size: 20px;
+        @media screen and (max-width: 768px) {
+          width: 100%;
+          top: 0;
+        }
 
-						&::first-letter {
-							font-size: 24px;
-							font-family: Lexend;
-						}
-					}
-				}
+        p {
+          font-size: 16px;
 
-				span {
-					display: flex;
-					align-items: center;
-					gap: 5px;
+          &::first-letter {
+            font-size: 28px;
+            font-family: Lexend;
+          }
 
-					a {
-						color: black;
-						font-size: 12px;
-						text-decoration: underline;
-						cursor: pointer;
-					}
+          @media screen and (max-width: 768px) {
+            font-size: 18px;
 
-					@media screen and (max-width: 768px) {
-						display: flex;
-					}
-				}
-			}
+            &::first-letter {
+              font-size: 24px;
+            }
+          }
+        }
 
-			.imageContainer {
-				position: relative;
-				width: 60%;
-				height: 100%;
-				border-radius: 25px;
-				overflow: hidden;
+        span {
+          display: flex;
+          align-items: center;
+          gap: 5px;
 
-				@media screen and (max-width: 768px) {
-					display: none;
-				}
+          a {
+            color: black;
+            font-size: 12px;
+            text-decoration: underline;
+            cursor: pointer;
+          }
+        }
+      }
 
-				.inner {
-					width: 100%;
-					height: 100%;
-				}
+      /* === DESKTOP IMAGE === */
+      .imageContainer,
+      .videoContainer {
+        position: relative;
+        width: 60%;
+        height: 100%;
+        border-radius: 25px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-				img {
-					object-fit: cover;
-				}
-			}
-			.videoContainer {
-				position: relative;
-				width: 60%;
-				height: 100%;
-				border-radius: 25px;
-				overflow: hidden;
-				display: flex;
-				align-items: center;
-				justify-content: center;
+        .inner {
+          width: 100%;
+          height: 100%;
+          position: relative; // REQUIRED FOR NEXT/IMAGE fill
+        }
 
-				video {
-					width: 100%;
-					height: 100%;
-					object-fit: cover;
-					border-radius: 25px;
-				}
+        img,
+        video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 25px;
+          position: absolute;
+          inset: 0;
+        }
 
-				@media screen and (max-width: 768px) {
-					display: none;
-				}
-			}
-		}
-	}
+        @media screen and (max-width: 768px) {
+          width: 100%;
+          height: 300px;
+          display: block;
+          margin-bottom: 20px;
+        }
+      }
+
+      /* === MOBILE FIX: SHOW IMAGE/VIDEO IN FULL === */
+      @media screen and (max-width: 768px) {
+        .imageContainer,
+        .videoContainer {
+          position: relative !important;
+        }
+
+        .imageContainer img,
+        .videoContainer video {
+          position: absolute !important;
+          inset: 0;
+          width: 100% !important;
+          height: 100% !important;
+          object-fit: cover !important;
+        }
+      }
+    }
+  }
 }

@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
-body{
+body {
     font-family: Lexend;
-    margin: 0px;
-    overflow: hidden; 
-    cursor: wait;
+    margin: 0;
     background-color: #f7f8fa;
-    @media screen and (max-width: 768px){
-        overflow: visible;
+    overflow-x: hidden; /* prevent horizontal scroll but allow vertical scroll */
+    cursor: default; /* normal pointer, not 'wait' */
+
+    @media screen and (max-width: 768px) {
+        overflow-x: hidden; /* keep content visible vertically */
     }
 }
